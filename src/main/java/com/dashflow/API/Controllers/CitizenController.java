@@ -1,14 +1,21 @@
 package com.dashflow.API.Controllers;
 
-import com.dashflow.API.Services.CitizenService;
-import com.dashflow.Domain.Entities.Citizen;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.dashflow.API.Services.CitizenService;
+import com.dashflow.Domain.Entities.Citizen;
 
 @RestController
 @RequestMapping("/citizens")
@@ -17,8 +24,34 @@ public class CitizenController {
     @Autowired
     private CitizenService citizenService;
 
+    //Get Functions
     @GetMapping
     public ResponseEntity<List<Citizen>> getAllCitizens() {
         return ResponseEntity.ok().body(citizenService.getAllCitizens());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Citizen> getCitizenById(@PathVariable String id) {
+        return ResponseEntity.ok().body(citizenService.getCitizenById(id));
+    }
+    
+    //Post Functions
+    @PostMapping
+    public ResponseEntity<Void> createCitizen(@RequestBody Citizen newData) {
+    	citizenService.createCitizen(newData);
+    	return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    
+    //Update Functions
+    @PatchMapping("/{id}")
+    public ResponseEntity<Citizen> updateCitizen(@RequestBody Citizen newData, @PathVariable String id) {
+    	return ResponseEntity.ok().body(citizenService.updateCitizen(newData, id));
+    }
+    
+    //Delete Functions
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCitizen(@PathVariable String id) {
+    	citizenService.deleteCitizen(id);
+    	return ResponseEntity.status(HttpStatus.GONE).build();
     }
 }

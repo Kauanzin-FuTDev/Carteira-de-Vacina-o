@@ -1,9 +1,10 @@
 package com.dashflow.Domain.Entities;
 
+import java.io.Serializable;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.io.Serializable;
 
 @Document(collection = "citizens")
 public class Citizen implements Serializable {
@@ -23,7 +24,9 @@ public class Citizen implements Serializable {
 
     private String cpf;
     private String phone;
-
+    
+    private List<Vacine> vacines;
+ 
     public Citizen() {
     }
 
@@ -49,10 +52,6 @@ public class Citizen implements Serializable {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -117,5 +116,17 @@ public class Citizen implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    
+    public List<Vacine> getVacines() {
+        return vacines;
+    }
+    
+    public void addVacine(Vacine vacine) {
+    	this.vacines.add(vacine);
+    }
+    
+    public void removeVacine(Vacine vacine) {
+    	this.vacines.remove(vacine);
     }
 }
