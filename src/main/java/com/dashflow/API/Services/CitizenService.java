@@ -25,6 +25,29 @@ public class CitizenService {
     public Citizen getCitizenById(String id) {
         return citizenRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cidadao não encontrado no banco de dados!"));
     }
+
+    public List<Vacine> getAllCitizenVacines(String id) {
+    	Citizen existingCitizen = citizenRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cidadão não encontrado"));
+    	return existingCitizen.getVacines();
+    }
+    
+    public Vacine getCitizenVacineById(String citizenId, String vacineId) {
+    	Citizen existingCitizen = citizenRepository.findById(citizenId).orElseThrow(() -> new ObjectNotFoundException("Cidadão não encontrado"));
+    	Vacine vacineToReturn = null;
+    	
+    	for (Vacine vacine : existingCitizen.getVacines()) {
+    		if (vacine.getId().equals(vacineId)) {
+    			vacineToReturn = vacine;
+    			break;
+    		}
+    	}
+    	
+    	if (vacineToReturn == null) {
+    		throw new ObjectNotFoundException("Vacina não encontrada");
+    	}
+    	
+    	return vacineToReturn;
+    }
     
     //Metodos Post
     public void createCitizen(Citizen newData) {
@@ -64,5 +87,24 @@ public class CitizenService {
     	} else {
     		throw new ObjectNotFoundException("Cidadão Não Encontrado!");
     	}
+    }
+    
+    public void deleteVacineById(String citizenId, String vacineId) {
+    	Citizen existingCitizen = citizenRepository.findById(citizenId).orElseThrow(() -> new ObjectNotFoundException("Cidadão não encontrado"));
+    	Vacine vacineToRemove = null;
+    	
+    	for (Vacine vacine : existingCitizen.getVacines()) {
+    		if (vacine.getId().equals(vacineId)) {
+    			vacineToRemove = vacine;
+    			break;
+    		}
+    	}
+    	
+    	if (vacineToRemove == null) {
+    		throw new ObjectNotFoundException("Vacina não encontrada");
+    	}
+    	
+    	existingCitizen.removeVacine(vacineToRemove);
+    	citizenRepository.save(existingCitizen);
     }
 }

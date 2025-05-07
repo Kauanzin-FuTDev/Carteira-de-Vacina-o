@@ -36,6 +36,16 @@ public class CitizenController {
         return ResponseEntity.ok().body(citizenService.getCitizenById(id));
     }
     
+    @GetMapping("/{id}/vacines")
+    public ResponseEntity<List<Vacine>> getAllCitizenVacines(@PathVariable String id) {
+        return ResponseEntity.ok().body(citizenService.getAllCitizenVacines(id));
+    }
+    
+    @GetMapping("/{citizenId}/vacines/{vacineId}")
+    public ResponseEntity<Vacine> getAllCitizenVacines(@PathVariable String citizenId, @PathVariable String vacineId) {
+        return ResponseEntity.ok().body(citizenService.getCitizenVacineById(citizenId, vacineId));
+    }
+    
     //Post Functions
     @PostMapping
     public ResponseEntity<Void> createCitizen(@RequestBody Citizen newData) {
@@ -59,6 +69,12 @@ public class CitizenController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCitizen(@PathVariable String id) {
     	citizenService.deleteCitizen(id);
+    	return ResponseEntity.status(HttpStatus.GONE).build();
+    }
+    
+    @DeleteMapping("/{citizenId}/vacines/{vacineId}")
+    public ResponseEntity<Void> deleteVacineById(@PathVariable String citizenId, @PathVariable String vacineId) {
+    	citizenService.deleteVacineById(citizenId, vacineId);
     	return ResponseEntity.status(HttpStatus.GONE).build();
     }
 }

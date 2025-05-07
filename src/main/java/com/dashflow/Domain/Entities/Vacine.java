@@ -14,7 +14,7 @@ public class Vacine implements Serializable {
 	private String id;
 	
 	private String name;
-	private LocalDateTime dayTaken;
+	private LocalDateTime dayTaken = LocalDateTime.now();
 	private LocalDateTime expirationDate;
 	private Duration duration;
 	private Integer dose = 1;
