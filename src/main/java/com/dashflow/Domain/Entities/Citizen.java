@@ -1,6 +1,7 @@
 package com.dashflow.Domain.Entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -25,7 +26,7 @@ public class Citizen implements Serializable {
     private String cpf;
     private String phone;
     
-    private List<Vacine> vacines;
+    private List<Vacine> vacines = new ArrayList<>();;
  
     public Citizen() {
     }
@@ -52,7 +53,7 @@ public class Citizen implements Serializable {
 
     public String getId() {
         return id;
-    }
+    }	
 
     public String getName() {
         return name;
@@ -120,6 +121,10 @@ public class Citizen implements Serializable {
     
     public List<Vacine> getVacines() {
         return vacines;
+    }
+    
+    public void setVacines(List<Vacine> vacines) {
+        this.vacines = vacines;
     }
     
     public void addVacine(Vacine vacine) {

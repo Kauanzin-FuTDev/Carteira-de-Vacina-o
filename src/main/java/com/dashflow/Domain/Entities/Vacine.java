@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 public class Vacine implements Serializable {
@@ -16,20 +17,29 @@ public class Vacine implements Serializable {
 	private LocalDateTime dayTaken;
 	private LocalDateTime expirationDate;
 	private Duration duration;
+	private Integer dose = 1;
 	private Hospital hostHospital;
 	
 	public Vacine() {
+		this.id = new ObjectId().toString();
 	}
-	
-    public Vacine(String name, LocalDateTime expirationDate) {
-        this.name = name;
-        this.dayTaken = LocalDateTime.now();
-        this.expirationDate = expirationDate;
-        this.setDuration(Duration.between(dayTaken, expirationDate));
-    }
-	
+
+	public Vacine(String name, LocalDateTime expirationDate, Hospital hostHospital) {
+		this.id = new ObjectId().toString();
+		this.name = name;
+		this.dayTaken = LocalDateTime.now();
+		this.expirationDate = expirationDate;
+		this.dose = 1;
+		this.duration = Duration.between(dayTaken, expirationDate);
+		this.hostHospital = hostHospital;
+	}
+
 	public String getId() {
 		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -71,5 +81,12 @@ public class Vacine implements Serializable {
 	public void setDuration(Duration duration) {
 		this.duration = duration;
 	}
+
+	public Integer getDose() {
+		return dose;
+	}
+
+	public void setDose(Integer dose) {
+		this.dose = dose;
+	}
 }
- 

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dashflow.API.Services.CitizenService;
 import com.dashflow.Domain.Entities.Citizen;
+import com.dashflow.Domain.Entities.Vacine;
 
 @RestController
 @RequestMapping("/citizens")
@@ -39,6 +40,12 @@ public class CitizenController {
     @PostMapping
     public ResponseEntity<Void> createCitizen(@RequestBody Citizen newData) {
     	citizenService.createCitizen(newData);
+    	return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    
+    @PostMapping("/{id}/vacines")
+    public ResponseEntity<Void> addVacineToCitizen(@RequestBody Vacine vacine, @PathVariable String id) {
+    	citizenService.addVacine(vacine, id);
     	return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     

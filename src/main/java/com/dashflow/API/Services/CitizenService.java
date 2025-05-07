@@ -1,13 +1,15 @@
 package com.dashflow.API.Services;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.dashflow.API.Controllers.Exceptions.CitizenAlreadyExistsException;
 import com.dashflow.API.Controllers.Exceptions.ObjectNotFoundException;
 import com.dashflow.API.Repositories.CitizenRepository;
 import com.dashflow.Domain.Entities.Citizen;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.dashflow.Domain.Entities.Vacine;
 
 @Service
 public class CitizenService {
@@ -31,6 +33,12 @@ public class CitizenService {
     	}
     	
     	citizenRepository.save(newData);
+    }
+    
+    public void addVacine(Vacine newVacineData, String id) {
+    	Citizen existingCitizen = citizenRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cidadão não encontrado"));
+    	existingCitizen.addVacine(newVacineData);
+    	citizenRepository.save(existingCitizen);
     }
     
     //Metodos Update
