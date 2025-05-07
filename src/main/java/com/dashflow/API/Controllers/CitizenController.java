@@ -65,6 +65,12 @@ public class CitizenController {
     	return ResponseEntity.ok().body(citizenService.updateCitizen(newData, id));
     }
     
+    @PatchMapping("/{citizenId}/vacines/{vacineId}")
+    public ResponseEntity<Void> updateCitizenVacineById(@RequestBody Vacine newData, @PathVariable String citizenId, @PathVariable String vacineId) {
+    	citizenService.updateVacine(vacineId, citizenId, newData);
+    	return ResponseEntity.ok().build();
+    }
+    
     //Delete Functions
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCitizen(@PathVariable String id) {

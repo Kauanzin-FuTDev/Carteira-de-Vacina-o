@@ -80,6 +80,29 @@ public class CitizenService {
         return citizenRepository.save(existingCitizen);
     }
     
+    public void updateVacine(String vacineId, String citizenId, Vacine newData) {
+        Citizen existingCitizen = citizenRepository.findById(citizenId).orElseThrow(() -> new ObjectNotFoundException("Cidadão não encontrado"));
+        Vacine vacineToModify = null;
+        
+    	for (Vacine vacine : existingCitizen.getVacines()) {
+    		if (vacine.getId().equals(vacineId)) {
+    			vacineToModify = vacine;
+    			break;
+    		}
+    	}
+    	
+    	if (vacineToModify == null) {
+    		throw new ObjectNotFoundException("Vacina não encontrada");
+    	}
+    	
+    	if (newData.getName() != null) vacineToModify.setName(newData.getName());
+    	if (newData.getDose() != null) vacineToModify.setDose(newData.getDose());
+    	if (newData.getExpirationDate() != null) vacineToModify.setExpirationDate(newData.getExpirationDate());
+    	if (newData.getDayTaken() != null) vacineToModify.setDayTaken(newData.getDayTaken());
+    	
+    	citizenRepository.save(existingCitizen);
+    }
+    
     //Metodos Delete
     public void deleteCitizen(String id) {
     	if (citizenRepository.findById(id) != null) {
