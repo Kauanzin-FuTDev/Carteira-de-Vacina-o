@@ -1,0 +1,67 @@
+#footerContent {
+  background-color: #000000;
+  padding: 30px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: var(--text-main-color);
+  user-select: none;
+}
+
+#footerContent ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 40px;
+  justify-content: center;
+  text-align: left;
+  margin-top: 30px;
+}
+
+#footerContent ul li a {
+  display: flex;
+  color: var(--text-secundary-color);
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.5s ease;
+}
+
+#footerContent ul li a:hover {
+  color: var(--text-selected-color);
+  transform: scale(1.05);
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(175, 175, 175);
+  padding: 10px;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+}
+
+#socialMediaIcons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+#socialMediaIcons i {
+  color: var(--text-secundary-color);
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.5s ease;
+}
+
+#socialMediaIcons i:hover {
+  color: var(--text-selected-color);
+  transform: scale(1.05);
+}
+
+#logoFooter {
+  width: 250px;
+  height: auto;
+  justify-self: center;
+}
