@@ -25,7 +25,9 @@ public class Citizen implements Serializable {
 
     private String cpf;
     private String phone;
-    
+
+    private Hospital Hospital;
+
     private List<Vacine> vacines = new ArrayList<>();;
  
     public Citizen() {
