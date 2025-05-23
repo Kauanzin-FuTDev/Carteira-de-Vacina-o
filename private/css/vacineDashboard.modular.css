@@ -1,0 +1,225 @@
+body {
+  background-color: #f2f2f2;
+  padding-top: 120px;
+}
+
+#vacineList {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  gap: 10px;
+
+  font-family: "Inter", sans-serif;
+
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+#vacine-list-content {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #ffffff;
+  width: 50vw;
+  max-height: 30vw;
+
+  border-radius: 20px;
+  padding: 0px 10px 25px 10px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#vacine-list-content header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  background-color: var(--tertiary-background-color);
+  color: white;
+
+  font-size: 1.5rem;
+  padding: 10px;
+
+  border-radius: 20px 20px 0px 0px;
+}
+
+#vacine-search {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+
+  background-color: #fdfdfd;
+  color: #979797;
+
+  border-radius: 20px;
+  padding: 15px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  box-shadow: 0px 3px 5px #dfdfdf;
+
+  border: 2px solid #dfdfdf;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  transition: all 0.3s ease;
+}
+
+#vacine-search::placeholder {
+  color: #979797;
+}
+
+#vacine-search:focus {
+  outline: none;
+  transform: scale(1.02);
+  box-shadow: 0px 3px 5px #dfdfdf;
+}
+
+.vacineCard {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 15px;
+  gap: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.vacineCard h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #000;
+  width: 100%;
+}
+
+.vacineCard span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.statusFrameG {
+  display: flex;
+  background-color: limegreen;
+  width: 3.2em;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.statusFrameY {
+  display: flex;
+  background-color: #fff600;
+  width: 3.2em;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.statusFrameR {
+  display: flex;
+  background-color: #ff0000;
+  width: 3.2em;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.vacine-info-card-vacinacao,
+.vacine-info-card-expiracao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  color: black;
+}
+
+.vacine-info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+}
+
+.vacine-info-card-expiracao h3 {
+  color: red;
+}
+
+.vacineCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 3px 5px #dfdfdf;
+}
+
+#vacine-guide-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 50vw;
+
+  border-radius: 20px;
+  padding: 0px 10px 25px 10px;
+}
+
+.vacine-guide-card {
+  display: flex;
+  flex-direction: row-reverse;
+
+  align-items: center;
+
+  width: 100%;
+
+  font-size: 0.5em;
+
+  gap: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.vacine-guide-card .statusFrameG,
+.vacine-guide-card .statusFrameY,
+.vacine-guide-card .statusFrameR {
+  width: 2em;
+  height: 2em;
+}
+
+#vacine-list-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+#vacine-list-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#vacine-list-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  #vacine-list-content {
+    width: 90vw;
+    height: auto;
+    max-height: 80vw;
+  }
+
+  #vacine-guide-content {
+    width: 90vw;
+  }
+
+  #vacine-search {
+    width: 90%;
+  }
+}

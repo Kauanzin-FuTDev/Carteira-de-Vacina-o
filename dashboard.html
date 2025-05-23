@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="private/css/websiteHeader.modular.css" />
+    <link rel="stylesheet" href="private/css/footer.modular.css" />
+    <link rel="stylesheet" href="private/css/vacineDashboard.modular.css" />
+    <title>Dashflow - Carteira De Vacinação Online</title>
+  </head>
+  <body>
+    <header id="websiteHeader">
+      <img class="logo" src="public/images/logo2.png" alt="Logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="dashboard.html">Carteira</a></li>
+          <li><a href="index.html">Noticias</a></li>
+          <li><a href="contact.html">Contato</a></li>
+          <li><a href="aboutme.html">Sobre</a></li>
+        </ul>
+      </nav>
+      <input
+        type="text"
+        id="searchbar"
+        placeholder="Pesquisar..."
+        aria-label="Pesquisar"
+      />
+    </header>
+
+    <section id="mainDashboard">
+      <section id="vacineList">
+        <div id="vacine-list-content">
+          <header>
+            <h2>Vacinas</h2>
+          </header>
+
+          <input
+            type="text"
+            id="vacine-search"
+            placeholder="Pesquisar vacina..."
+          />
+
+          <article class="vacineCard">
+            <div
+              class="statusFrameY"
+              title="Vencimento Proximo"
+              aria-label="Status da Vacina"
+            ></div>
+
+            <h2>Gripe<span> - Vencimento Proximo</span></h2>
+
+            <section class="vacine-info-content">
+              <div class="vacine-info-card-vacinacao">
+                <h3>Data da Vacinação:</h3>
+                <time datetime="2023-01-01">28/05/2024</time>
+              </div>
+
+              <div class="vacine-info-card-expiracao">
+                <h3>Data de Expiração:</h3>
+                <time datetime="2023-01-01">28/05/2025</time>
+              </div>
+            </section>
+          </article>
+
+          <article class="vacineCard">
+            <div
+              class="statusFrameR"
+              title="Vencido"
+              aria-label="Status da Vacina"
+            ></div>
+
+            <h2>Dengue<span> - Vencida</span></h2>
+
+            <section class="vacine-info-content">
+              <div class="vacine-info-card-vacinacao">
+                <h3>Data da Vacinação:</h3>
+                <time datetime="2023-01-01">01/01/2017</time>
+              </div>
+
+              <div class="vacine-info-card-expiracao">
+                <h3>Data de Expiração:</h3>
+                <time datetime="2023-01-01">01/01/2022</time>
+              </div>
+            </section>
+          </article>
+
+          <article class="vacineCard">
+            <div
+              class="statusFrameG"
+              title="Em Dia"
+              aria-label="Status da Vacina"
+            ></div>
+
+            <h2>Febre Amarela<span> - Em Dia</span></h2>
+
+            <section class="vacine-info-content">
+              <div class="vacine-info-card-vacinacao">
+                <h3>Data da Vacinação:</h3>
+                <time datetime="2023-01-01">01/01/2017</time>
+              </div>
+
+              <div class="vacine-info-card-expiracao">
+                <h3>Data de Expiração:</h3>
+                <time datetime="2023-01-01">Valida Para Sempre</time>
+              </div>
+            </section>
+          </article>
+
+          <article class="vacineCard">
+            <div
+              class="statusFrameG"
+              title="Em Dia"
+              aria-label="Status da Vacina"
+            ></div>
+
+            <h2>Teste<span> - Em Dia</span></h2>
+
+            <section class="vacine-info-content">
+              <div class="vacine-info-card-vacinacao">
+                <h3>Data da Vacinação:</h3>
+                <time datetime="2023-01-01">01/01/2017</time>
+              </div>
+
+              <div class="vacine-info-card-expiracao">
+                <h3>Data de Expiração:</h3>
+                <time datetime="2023-01-01">Valida Para Sempre</time>
+              </div>
+            </section>
+          </article>
+
+          <article class="vacineCard">
+            <div
+              class="statusFrameG"
+              title="Em Dia"
+              aria-label="Status da Vacina"
+            ></div>
+
+            <h2>Teste<span> - Em Dia</span></h2>
+
+            <section class="vacine-info-content">
+              <div class="vacine-info-card-vacinacao">
+                <h3>Data da Vacinação:</h3>
+                <time datetime="2023-01-01">01/01/2017</time>
+              </div>
+
+              <div class="vacine-info-card-expiracao">
+                <h3>Data de Expiração:</h3>
+                <time datetime="2023-01-01">Valida Para Sempre</time>
+              </div>
+            </section>
+          </article>
+        </div>
+
+        <footer id="vacine-list-footer">
+          <section id="vacine-guide-content">
+            <div class="vacine-guide-card">
+              <div class="statusFrameG" aria-label="Status da Vacina"></div>
+              <h2>Em Dia</h2>
+            </div>
+            <div class="vacine-guide-card">
+              <div class="statusFrameY" aria-label="Status da Vacina"></div>
+              <h2>Vencimento Proximo</h2>
+            </div>
+            <div class="vacine-guide-card">
+              <div class="statusFrameR" aria-label="Status da Vacina"></div>
+              <h2>Vencido</h2>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </section>
+
+    <footer>
+      <div id="footerContent">
+        <div id="footerLogo">
+          <img src="public/images/Logo_New.png" alt="Logo" id="logoFooter" />
+        </div>
+        <ul>
+          <li><a href="index.html">Serviços</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Politicas De Privacidade</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+        <div id="socialMediaIcons">
+          <a href="https://www.instagram.com/dashflowbrasil/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/dashflowbrasil" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://twitter.com/dashflowbrasil" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/dashflowbrasil/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <p>
+        &copy; 2023 Dashflow LTDA. Todos os direitos reservados | UR-10, Ibura,
+        Recife - PE, CEP 51012-8440 | Tel: +55 81 99864-4567.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+.about-section,
+.faq-section {
+  max-width: 1200px;
+  margin-top: 130px;
+  margin-bottom: 110px;
+  justify-self: center;
+  text-align: center;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #1e40af;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 30px;
+}
+
+.about-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.about-card,
+.faq-card {
+  background-color: #f1f5f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+
+.about-card:hover,
+.faq-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.15);
+}
+
+.about-card h3,
+.faq-card h3 {
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+/* FAQ específico */
+
+.faq-card p {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.faq-card button {
+  background-color: var(--secundary-button-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.faq-card button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.faq-card button:hover {
+  background-color: var(--secundary-button-hover-color);
+  transform: scale(1.05);
+}
+
+.faq-card button:active {
+  background-color: var(--secundary-button-active-color);
+  transform: scale(0.95);
+}

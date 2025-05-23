@@ -1,5 +1,5 @@
 #footerContent {
-  background-color: #000000;
+  background-color: var(--footer-background-color);
   padding: 30px;
   text-align: center;
   font-family: "Inter", sans-serif;

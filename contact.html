@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashflow - Carteira De Vacinação Online</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="private/css/websiteHeader.modular.css" />
+    <link rel="stylesheet" href="private/css/footer.modular.css" />
+    <link rel="stylesheet" href="private/css/contactSection.modular.css" />
+  </head>
+  <body>
+    <header id="websiteHeader">
+      <img class="logo" src="public/images/logo2.png" alt="Logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="dashboard.html">Carteira</a></li>
+          <li><a href="index.html">Noticias</a></li>
+          <li><a href="contact.html">Contato</a></li>
+          <li><a href="aboutme.html">Sobre</a></li>
+        </ul>
+      </nav>
+      <input
+        type="text"
+        id="searchbar"
+        placeholder="Pesquisar..."
+        aria-label="Pesquisar"
+      />
+    </header>
+
+    <main id="contactSection">
+      <h1>Fale Conosco</h1>
+      <p>
+        Preencha o formulário abaixo ou entre em contato pelos nossos canais.
+      </p>
+
+      <div class="contact-container">
+        <form class="contact-form">
+          <label
+            >Nome
+            <input type="text" placeholder="Seu nome" required />
+          </label>
+
+          <label
+            >Email
+            <input type="email" placeholder="seuemail@exemplo.com" required />
+          </label>
+
+          <label
+            >Assunto
+            <input type="text" placeholder="Assunto" required />
+          </label>
+
+          <label
+            >Mensagem
+            <textarea
+              placeholder="Digite sua mensagem..."
+              rows="5"
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+
+        <div class="contact-info">
+          <h3>Outros meios de contato:</h3>
+          <p><strong>Email:</strong> suporte@dashflow.com.br</p>
+          <p><strong>Telefone:</strong> (81) 99864-4567</p>
+          <p><strong>Endereço:</strong> Av. Saúde Digital, 123 - Recife, PE</p>
+          <div class="contact-img">
+            <img src="public/images/contact.png" alt="Imagem de Contato" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="footerContent">
+        <div id="footerLogo">
+          <img src="public/images/Logo_New.png" alt="Logo" id="logoFooter" />
+        </div>
+        <ul>
+          <li><a href="index.html">Serviços</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Politicas De Privacidade</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+        <div id="socialMediaIcons">
+          <a href="https://www.instagram.com/dashflowbrasil/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/dashflowbrasil" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://twitter.com/dashflowbrasil" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/dashflowbrasil/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <p>
+        &copy; 2023 Dashflow LTDA. Todos os direitos reservados | UR-10, Ibura,
+        Recife - PE, CEP 51012-8440 | Tel: +55 81 99864-4567.
+      </p>
+    </footer>
+  </body>
+</html>

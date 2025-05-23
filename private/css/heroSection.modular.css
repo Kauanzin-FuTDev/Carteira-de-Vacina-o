@@ -55,11 +55,28 @@
 }
 
 #heroButton:hover {
-  background-color: #ff5252;
+  background-color: var(--secundary-button-hover-color);
   transform: scale(1.05);
 }
 
 #heroButton:active {
-  background-color: #800000;
+  background-color: var(--secundary-button-active-color);
   transform: scale(0.95);
+}
+
+@media (max-width: 900px) {
+  #heroSection {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  #heroContent {
+    margin-top: 30px;
+    width: 80vw;
+    padding: 30px;
+  }
+
+  #heroSection img {
+    max-width: 90vw;
+  }
 }

@@ -73,4 +73,19 @@
 
 #servicesSearchbar:focus {
   transform: scale(1.05);
+  outline: 2px solid var(--outline-color);
+}
+
+@media (max-width: 900px) {
+  #landpageFrame h1 {
+    font-size: 50px;
+  }
+
+  #landpageFrame h2 {
+    font-size: 20px;
+  }
+
+  #servicesSearchbar {
+    width: 60vw;
+  }
 }

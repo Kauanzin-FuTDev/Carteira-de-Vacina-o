@@ -1,10 +1,24 @@
 :root {
-  --background-color: #0c0c0c;
-  --secundary-background-color: #131313;
+  --background-color: #0059ff;
+  --footer-background-color: #0059ff;
+  --secundary-background-color: rgb(0, 104, 223);
+  --tertiary-background-color: rgb(34, 137, 255);
+
+  --main-button-color: #0059ff;
+  --main-button-hover-color: #0059ff;
+  --main-button-active-color: #0059ff;
+
+  --secundary-button-color: #4f8cff;
+  --secundary-button-hover-color: #3c80ff;
+  --secundary-button-active-color: #0059ff;
+
+  --outline-color: #528eff;
+
   --text-main-color: #ffffff;
-  --text-secundary-color: #dadada;
+  --text-secundary-color: #e9e9e9;
   --text-tertiary-color: #808080;
-  --text-selected-color: #aaaaaa;
+  --text-selected-color: #dadada;
+  --text-placeholder-color: #f0f0f0;
 }
 
 * {
@@ -23,7 +37,7 @@
   padding: 10px;
   gap: 20px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: var(--background-color);
 }
 
@@ -65,11 +79,19 @@
 
   color: var(--text-main-color);
   border: none;
+
+  outline: 0px solid var(--outline-color);
   background-color: var(--secundary-background-color);
+
+  transition: outline 0.025s ease-in-out;
+}
+
+#searchbar::placeholder {
+  color: var(--text-placeholder-color);
 }
 
 #searchbar:focus {
-  outline: 2px solid #494949;
+  outline: 2px solid var(--outline-color);
 }
 
 .logo {
@@ -123,5 +145,21 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    content: url("/public/images/logo.png");
+    width: 90px;
+    height: auto;
+  }
+
+  #websiteHeader nav ul {
+    visibility: hidden;
+  }
+
+  #searchbar {
+    visibility: hidden;
   }
 }
